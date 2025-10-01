@@ -9,6 +9,10 @@ def _generate_inventory():
     ungrouped = ["host_{}.local".format(i) for i in range(count)]
 
     hostvars = {}
+
+    # Add localhost entry
+    hostvars['localhost'] = {'ansible_host': '127.0.0.1', 'ansible_connection': 'local'}
+    
     for i in range(count):
         name = "host_{}.local".format(i)
         hostvars[name] = {'ansible_host': '', 'ansible_connection': ''}
