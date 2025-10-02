@@ -13,8 +13,8 @@ def _generate_inventory():
     for i in range(count):
         name = "host_{}.local".format(i)
         hostvars[name] = {'ansible_host': '', 'ansible_connection': ''}
-        # hostvars[name]['ansible_host'] = '192.168.10.158' # DJ AAP 2.5 RPM VMs
-        hostvars[name]['ansible_host'] = '127.0.0.1' # DJ aap-dev
+        hostvars[name]['ansible_host'] = '192.168.10.158' # DJ AAP 2.5 RPM VMs
+        # hostvars[name]['ansible_host'] = '127.0.0.1' # DJ aap-dev
         hostvars[name]['ansible_connection'] = 'local'
 
     data = {
